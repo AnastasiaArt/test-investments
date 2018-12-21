@@ -1,0 +1,52 @@
+@mixin font-face($family, $path, $weight, $style) {
+  @font-face {
+    font-family: $family;
+    src: url("#{$path}.woff2") format("woff2"), url("#{$path}.woff") format("woff");
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+  }
+}
+
+@mixin indent {
+  margin: 0;
+  padding: 0;
+}
+
+@mixin list {
+  @include indent;
+
+  list-style: none;
+}
+
+@mixin font-style($size, $height, $weight) {
+  font-size: $size;
+  line-height: $height;
+  font-weight: $weight;
+  text-align: left;
+}
+
+@mixin bgImage {
+  background-position: top;
+  background-repeat: no-repeat;
+}
+
+@mixin link {
+  color: $text-color;
+  text-decoration: none;
+  display: block;
+}
+
+@mixin respond-to($breakpoint) {
+  $width-screen: map-get($breakpoints, $breakpoint);
+
+  @media (min-width: $width-screen) {
+    @content;
+  }
+}
+
+@mixin pseudo($display: block, $pos: absolute, $content: "") {
+  display: $display;
+  position: $pos;
+  content: $content;
+}

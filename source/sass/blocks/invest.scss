@@ -1,0 +1,72 @@
+.invest {
+  @include bgImage;
+
+  min-height: 623px;
+  background-image: url("../img/bg.jpg");
+}
+
+.invest__container {
+  width: 100%;
+}
+
+.invest__title {
+  @include font-style(36px, 43px, 300);
+
+  width: $container-xs;
+  margin: $center;
+  padding: 0;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.invest__list {
+  @include list;
+  width: $container-xs;
+  margin: $center;
+  padding-top: 44px;
+}
+
+.invest__item {
+  margin-bottom: 10px;
+  position: relative;
+
+  &::before {
+    @include pseudo;
+
+    top: 35px;
+    left: 35px;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.invest__item--self::before {
+  background-image: url("../img/icon1.png");
+  background-size: contain;
+  width: 35px;
+  height: 28px;
+}
+
+.invest__item--invest::before {
+  background-image: url("../img/icon2.png");
+  background-size: contain;
+  width: 34px;
+  height: 28px;
+}
+
+.invest__item--investor::before {
+  background-image: url("../img/icon3.png");
+  background-size: contain;
+  width: 30px;
+  height: 36px;
+}
+
+.invest__link {
+  @include font-style(19px, 23px, 400);
+  @include link;
+
+  background-color: rgba(#fafaf0, 0.6);
+  padding: 25px;
+  padding-left: 70px;
+  padding-right: 50px;
+  letter-spacing: -0.02px;
+}

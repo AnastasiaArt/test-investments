@@ -1,0 +1,50 @@
+.detail {
+  box-sizing: border-box;
+  width: 92.35%;
+  margin: $center;
+}
+
+.detail__text {
+  @include indent;
+}
+
+.detail__title {
+  @include font-style(24px, 29px, 300);
+  @include indent;
+}
+
+.detail__list {
+  @include list;
+  counter-reset: li;
+
+  & li {
+    position:relative;
+    padding-left: 30px;
+    box-sizing: border-box;
+    margin-bottom: 12px;
+
+    &::before {
+      @include font-style(32px, 38px, 300);
+
+      content: counter(li);
+      counter-increment: li;
+      position:absolute;
+      top: -2px;
+      left: 0;
+      width: 10px;
+      color: $accent-color;
+      }
+    }
+  }
+
+  .detail__btn {
+    @include font-style(18px, 22px, 500);
+
+    color: #fff;
+    background-color: $accent-color;
+    border: none;
+    border-radius: 3px;
+    text-align: center;
+    padding: 13px 25px;
+
+  }

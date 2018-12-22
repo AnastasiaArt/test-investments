@@ -1,0 +1,53 @@
+.tab-nav-wrapper {
+  display: none;
+}
+
+@include respond-to(large) {
+  .tab-nav-wrapper {
+    display: block;
+    width: 100%;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 51vw;
+    z-index: 100;
+    height: 120px;
+    border-bottom: 1px solid rgba($link-color, 0.5);
+  }
+
+  .tab-nav-wrapper__list {
+    @include list;
+
+    display: flex;
+    width: $container-xl;
+    margin: $center;
+    justify-content: space-between;
+    height: 100%;
+    box-sizing: border-box;
+  }
+
+  .tab-nav-wrapper__item {
+    width: 30%;
+
+    & a {
+      @include font-style(26px, 30px, 300);
+      @include link;
+
+      color: #2e2e2e;
+      text-align: center;
+      padding: 36px;
+      width: 100%;
+      box-sizing: border-box;
+      height: 100%;
+
+      &:hover,
+      &:focus {
+        color: $accent-color;
+      }
+    }
+    .current {
+      color: $accent-color;
+      border-bottom: 3px solid rgba($accent-color, 0.5);
+    }
+  }
+}

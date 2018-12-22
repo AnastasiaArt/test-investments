@@ -35,6 +35,7 @@
   color: $text-color;
   text-decoration: none;
   display: block;
+  cursor: pointer;
 }
 
 @mixin respond-to($breakpoint) {

@@ -6,20 +6,19 @@
   <meta name="format-detection" content="telephone=no">
   <title>Инвестиции</title>
   <link href="css/style-min.css" rel="stylesheet">
-  <link rel="preload" href="fonts/pfdintextpro.woff2" as="font">
-  <link rel="preload" href="fonts/pfdintextpro-medium.woff2" as="font">
   <link rel="preload" href="fonts/pfdintextpro-light.woff2" as="font">
+  <link rel="preload" href="img/bg.jpg" as="image">
   <script src="js/jquery-min.js"></script>
 </head>
 <body>
-  <section class="invest">
-    <div class="invest__bg" id="invest">
-      <h1 class="invest__title">Выберите способ заработка</h1>
-      <ul class="invest__list">
-        <li class="invest__item invest__item--self"><a class="invest__link" id="1">Самостоятельно торговать</a>
-          <div class="invest__detail detail hidden">
+  <section class="invest" id="invest">
+    <h1 class="invest__title">Выберите способ заработка</h1>
+    <ul class="invest__list">
+      <li class="invest__item"><a href="#" class="invest__link  invest__link--self" id="1"><span>Самостоятельно</span> торговать</a>
+        <div class="invest__detail detail hidden detail--self">
+          <div class="detail__container">
             <p class="detail__text">Если вы ищете пассивный доход и предпочитаете, чтобы деньги для вас зарабатывал тот, кто умеет это делать, тогда попробуйте ЛАММ. ЛАММ – это сервис копирования сделок успешных трейдеров. Доходность ни чем не ограничена!</p>
-            <h2 class="detail__title">Как это работает</h2>
+            <h2 class="detail__title">1Как это работает</h2>
             <ol class="detail__list">
               <li>Вы выбираете управляющего из рейтинга по фильтру Options</li>
               <li>Подключаете свой счет к счету Управляющего</li>
@@ -30,11 +29,14 @@
             </ol>
             <button type="button" class="detail__btn">Продолжить</button>
           </div>
-        </li>
-        <li class="invest__item invest__item--invest"><a class="invest__link" id="2">Инвестировать</a>
-          <div class="invest__detail detail hidden">
+          <div class="detail__img"></div>
+        </div>
+      </li>
+      <li class="invest__item"><a href="#" class="invest__link invest__link--invest" id="2">Инвестировать</a>
+        <div class="invest__detail detail hidden detail--invest">
+          <div class="detail__container">
             <p class="detail__text">Если вы ищете пассивный доход и предпочитаете, чтобы деньги для вас зарабатывал тот, кто умеет это делать, тогда попробуйте ЛАММ. ЛАММ – это сервис копирования сделок успешных трейдеров. Доходность ни чем не ограничена!</p>
-            <h2 class="detail__title">Как это работает</h2>
+            <h2 class="detail__title">2Как это работает</h2>
             <ol class="detail__list">
               <li>Вы выбираете управляющего из рейтинга по фильтру Options</li>
               <li>Подключаете свой счет к счету Управляющего</li>
@@ -44,11 +46,15 @@
               <li>Вы можете отключиться от Управляющих в любой момент.</li>
             </ol>
             <button type="button" class="detail__btn">Продолжить</button>
-          </div></li>
-        <li class="invest__item invest__item--investor"><a class="invest__link"  id="3">Привлекать инвесторов</a>
-          <div class="invest__detail detail hidden">
+          </div>
+          <div class="detail__img"></div>
+        </div>
+      </li>
+      <li class="invest__item"><a href="#" class="invest__link  invest__link--investor" id="3">Привлекать инвесторов</a>
+        <div class="invest__detail detail hidden detail--investor">
+          <div class="detail__container">
             <p class="detail__text">Если вы ищете пассивный доход и предпочитаете, чтобы деньги для вас зарабатывал тот, кто умеет это делать, тогда попробуйте ЛАММ. ЛАММ – это сервис копирования сделок успешных трейдеров. Доходность ни чем не ограничена!</p>
-            <h2 class="detail__title">Как это работает</h2>
+            <h2 class="detail__title">3Как это работает</h2>
             <ol class="detail__list">
               <li>Вы выбираете управляющего из рейтинга по фильтру Options</li>
               <li>Подключаете свой счет к счету Управляющего</li>
@@ -58,7 +64,16 @@
               <li>Вы можете отключиться от Управляющих в любой момент.</li>
             </ol>
             <button type="button" class="detail__btn">Продолжить</button>
-          </div></li>
+          </div>
+          <div class="detail__img"></div>
+        </div>
+      </li>
+    </ul>
+    <div class="tab-nav-wrapper">
+      <ul class="tab-nav-wrapper__list">
+        <li class="tab-nav-wrapper__item one"><a class="tab-nav-wrapper__link" href="#">Торговать</a></li>
+        <li class="tab-nav-wrapper__item two"><a href="#" class="tab-nav-wrapper__link">Инвестировать</a></li>
+        <li class="tab-nav-wrapper__item three"><a href="#" class="tab-nav-wrapper__link">Привлекать инвесторов</a></li>
       </ul>
     </div>
   </section>

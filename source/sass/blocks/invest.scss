@@ -1,12 +1,17 @@
 .invest {
   @include bgImage;
 
-  min-height: 623px;
+  width: 100%;
+  min-height: 100vh;
   background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
-.invest__container {
+.invest__bg {
   width: 100%;
+  background-color: $main-color;
+  background-image: none;
 }
 
 .invest__title {
@@ -15,58 +20,173 @@
   width: $container-xs;
   margin: $center;
   padding: 0;
-  margin-bottom: 20px;
+  padding-top: 42px;
+  margin-bottom: 15px;
   text-align: center;
+  color: $color-h1;
 }
 
 .invest__list {
   @include list;
+
   width: $container-xs;
   margin: $center;
-  padding-top: 44px;
+  padding-bottom: 40px;
 }
 
 .invest__item {
   margin-bottom: 10px;
-  position: relative;
-
-  &::before {
-    @include pseudo;
-
-    top: 35px;
-    left: 35px;
-    transform: translate(-50%, -50%);
-  }
-}
-
-.invest__item--self::before {
-  background-image: url("../img/icon1.png");
-  background-size: contain;
-  width: 35px;
-  height: 28px;
-}
-
-.invest__item--invest::before {
-  background-image: url("../img/icon2.png");
-  background-size: contain;
-  width: 34px;
-  height: 28px;
-}
-
-.invest__item--investor::before {
-  background-image: url("../img/icon3.png");
-  background-size: contain;
-  width: 30px;
-  height: 36px;
 }
 
 .invest__link {
   @include font-style(19px, 23px, 400);
   @include link;
 
-  background-color: rgba(#fafaf0, 0.6);
+  background-color: $second-color;
   padding: 25px;
-  padding-left: 70px;
+  padding-left: 69px;
   padding-right: 50px;
   letter-spacing: -0.02px;
+  position: relative;
+  box-sizing: border-box;
+  color: $link-color;
+
+  &::before {
+    @include pseudo;
+
+    top: 35px;
+    left: 35px;
+    z-index: 10;
+    transform: translate(-50%, -50%);
+  }
+
+  &::after {
+    @include pseudo();
+
+    width: 13px;
+    height: 13px;
+    border-top: 1px solid rgba($text-color, 0.68);
+    border-left: 1px solid rgba($text-color, 0.68);
+    top: 53%;
+    right: 22px;
+    transition: .3s all;
+    transform: rotate(225deg) translateY(50%);
+  }
+}
+
+.invest__link.active::after{
+  transform:  rotate(45deg) translateY(-50%);
+}
+
+.invest__link--self::before {
+  background-image: url("../img/icon1.png");
+  background-size: contain;
+  width: 35px;
+  height: 28px;
+}
+
+.invest__link--invest::before {
+  background-image: url("../img/icon2.png");
+  background-size: contain;
+  width: 34px;
+  height: 28px;
+}
+
+.invest__link--investor::before {
+  background-image: url("../img/icon3.png");
+  background-size: contain;
+  width: 30px;
+  height: 36px;
+}
+
+@include respond-to(large) {
+  .invest {
+    background-size: 100%;
+    position: relative;
+    z-index: 10;
+  }
+
+  .invest__title {
+    @include font-style(48px, 58px, 300);
+
+    letter-spacing: -0.02px;
+    text-align: center;
+    width: $container-xl;
+    margin: $center;
+    margin-bottom: 4vw;
+    padding-top: 14vw;
+  }
+
+  .invest__list {
+    width: $container-xl;
+    margin: $center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0;
+    position: relative;
+  }
+
+  .invest__item {
+    width: 30%;
+    margin-bottom: 0;
+  }
+
+  .invest__link {
+    @include font-style(28px, 34px, 300);
+
+    padding: 0;
+    margin: $center;
+    width: 18.7vw;
+    height: 18.7vw;
+    border-radius: 50%;
+    text-align: center;
+    padding-top: 10.5vw;
+    letter-spacing: -0.007px;
+    box-shadow: 0 0 0 10px $second-color;
+    margin-bottom: 10.55vw;
+    color: $text-color;
+
+    &:before {
+      top: 35%;
+      left: 50%;
+    }
+
+    &:after {
+      display: none;
+    }
+
+    &:focus,
+    &:hover {
+      border: 1px solid $accent-color;
+    }
+
+    & span {
+      display: none;
+    }
+  }
+
+  .invest__link--active {
+    border: 1px solid $accent-color;
+  }
+  .invest__link--self {
+    text-transform: capitalize;
+    &::before {
+      width: 83px;
+      height: 64px;
+    }
+  }
+  .invest__link--invest::before {
+    width: 79px;
+    height: 66px;
+  }
+
+  .invest__link--investor::before {
+    width: 70px;
+    height: 84px;
+  }
+
+  .invest__link.active {
+    border: 1px solid $accent-color;
+  }
 }
